@@ -1,0 +1,9 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  registration_number: MyString
+  completed_time: 2024-01-22 20:42:04
+
+two:
+  registration_number: MyString
+  completed_time: 2024-01-22 20:42:04

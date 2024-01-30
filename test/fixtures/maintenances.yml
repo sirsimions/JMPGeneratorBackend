@@ -1,0 +1,13 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  regnumber: MyString
+  date: 2024-01-22
+  time: 2024-01-22 20:53:42
+  spare: MyString
+
+two:
+  regnumber: MyString
+  date: 2024-01-22
+  time: 2024-01-22 20:53:42
+  spare: MyString

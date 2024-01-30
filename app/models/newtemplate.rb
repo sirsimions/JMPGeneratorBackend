@@ -1,0 +1,2 @@
+class Newtemplate < ApplicationRecord
+end

@@ -1,0 +1,2 @@
+class NewtemplatesController < ApplicationController
+end

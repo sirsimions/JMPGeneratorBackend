@@ -1,0 +1,2 @@
+class CompletedTruck < ApplicationRecord
+end
