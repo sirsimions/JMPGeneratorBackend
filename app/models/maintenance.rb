@@ -1,2 +1,3 @@
 class Maintenance < ApplicationRecord
+    
 end
