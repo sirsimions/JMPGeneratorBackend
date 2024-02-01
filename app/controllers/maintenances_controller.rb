@@ -72,7 +72,7 @@ class MaintenancesController < ApplicationController
             time: @maintenance.time,
             spare: @maintenance.spare,
             location: @maintenance.location,  # Make sure to include the location attribute
-            completed_at: Time.current
+            # completed_at: Time.current
           }
       
           completed_truck = CompletedTruck.new(completed_truck_data)
