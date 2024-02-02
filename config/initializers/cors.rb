@@ -7,7 +7,7 @@
 
 Rails.application.config.middleware.insert_before 0, Rack::Cors do
   allow do
-    origins 'https://jmp.onrender.com'
+    origins 'https://keen-kangaroo-49a59b.netlify.app'
 
     resource '*',
       headers: :any,
