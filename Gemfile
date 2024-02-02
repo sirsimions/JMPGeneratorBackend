@@ -46,3 +46,5 @@ gem 'jwt'
 gem 'fast_jsonapi'
 
 gem 'active_model_serializers'
+
+
