@@ -10,7 +10,7 @@ Rails.application.config.middleware.insert_before 0, Rack::Cors do
     origins 'https://keen-kangaroo-49a59b.netlify.app', 'https://jmp.onrender.com'
 
     headers: :any,
-      methods: [:get, :post, :put, :patch, :delete, :options, :head],
+      methods: [:get, :post, :put, :patch, :delete, :options, :head]
       expose: {
         'Access-Token' => true,
         'Uid' => true,
