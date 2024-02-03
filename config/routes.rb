@@ -14,7 +14,7 @@ Rails.application.routes.draw do
   # get "/temp", to: "finaltables#show"
   get "/dat", to: "finaltables#index"
   # get '/complete', to: 'completed_trucks#complete'
-  get '/completed', to: 'completed_trucks#show'
+  # get '/completed', to: 'completed_trucks#show'
   get '/usersshow', to: 'maintenances#show'
   get '/finishedTrucks', to: 'completed_trucks#index'
   get "/serve", to: 'maintenances#show'
