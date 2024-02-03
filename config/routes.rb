@@ -23,7 +23,7 @@ Rails.application.routes.draw do
   post "/login", to: "sessions#create"
   get "/authorized", to: "sessions#show"
   get '/completed_trucks', to: 'maintenances#completed_trucks'
-  post '/create', to: 'auths#create'
+  post '/signup', to: 'auths#create'
   get '/users', to: 'auths#show'
   post '/login', to: 'sessions#create'
   delete '/logout', to: 'sessions#destroy'
