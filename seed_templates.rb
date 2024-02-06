@@ -5,21 +5,32 @@ templates_to_seed = [
   
 ]
 
-# Seed the data
-templates_data.each do |template_params|
-    template = Finaltable.find_or_initialize_by(
-      startPosition: template_params[:startPosition],
-      startTime: template_params[:startTime],
-      endLocation: template_params[:endLocation]
-    )
+templates_to_seed.each do |template_params|
+    # Check if a template with the same criteria already exists
+    existing_template = Finaltable.find_by(startPosition: template_params[:startPosition], startTime: template_params[:startTime], endLocation: template_params[:endLocation])
   
-    # Set other attributes if the template is being created
-    template.other_attribute = template_params[:other_attribute]
-    template.another_attribute = template_params[:another_attribute]
+    if existing_template.nil?
+      # Create a new Finaltable record if it doesn't exist
+      template = Finaltable.new
   
-    if template.save
+      # Set attributes based on the template_params hash
+      template.startPosition = template_params[:startPosition]
+      template.startTime = template_params[:startTime]
+      template.endLocation = template_params[:endLocation]
+      
+template.startLocation1 = template_params[:startLocation1] template.startLocation2 = template_params[:startLocation2] template.startLocation3 = template_params[:startLocation3] template.startLocation4 = template_params[:startLocation4] template.startLocation5 = template_params[:startLocation5] template.startLocation6 = template_params[:startLocation6] template.startLocation7 = template_params[:startLocation7] template.startLocation8 = template_params[:startLocation8] template.startLocation9 = template_params[:startLocation9] template.startLocation10 = template_params[:startLocation10] template.startLocation11 = template_params[:startLocation11] template.startLocation12 = template_params[:startLocation12] template.startLocation13 = template_params[:startLocation13] template.startLocation14 = template_params[:startLocation14] template.startLocation15 = template_params[:startLocation15] template.startLocation16 = template_params[:startLocation16] template.startLocation17 = template_params[:startLocation17]
+template.endLocation1 = template_params[:endLocation1] template.endLocation2 = template_params[:endLocation2] template.endLocation3 = template_params[:endLocation3] template.endLocation4 = template_params[:endLocation4] template.endLocation5 = template_params[:endLocation5] template.endLocation6 = template_params[:endLocation6] template.endLocation7 = template_params[:endLocation7] template.endLocation8 = template_params[:endLocation8] template.endLocation9 = template_params[:endLocation9] template.endLocation10 = template_params[:endLocation10] template.endLocation11 = template_params[:endLocation11] template.endLocation12 = template_params[:endLocation12] template.endLocation13 = template_params[:endLocation13] template.endLocation14 = template_params[:endLocation14] template.endLocation15 = template_params[:endLocation15] template.endLocation16 = template_params[:endLocation16] template.endLocation17 = template_params[:endLocation17]
+template.startTime1 = template_params[:startTime1] template.startTime2 = template_params[:startTime2] template.startTime3 = template_params[:startTime3] template.startTime4 = template_params[:startTime4] template.startTime5 = template_params[:startTime5] template.startTime6 = template_params[:startTime6] template.startTime7 = template_params[:startTime7] template.startTime8 = template_params[:startTime8] template.startTime9 = template_params[:startTime9] template.startTime10 = template_params[:startTime10] template.startTime11 = template_params[:startTime11] template.startTime12 = template_params[:startTime12] template.startTime13 = template_params[:startTime13] template.startTime14 = template_params[:startTime14] template.startTime15 = template_params[:startTime15] template.startTime16 = template_params[:startTime16] template.startTime17 = template_params[:startTime17]
+template.endTime1 = template_params[:endTime1] template.endTime2 = template_params[:endTime2] template.endTime3 = template_params[:endTime3] template.endTime4 = template_params[:endTime4] template.endTime5 = template_params[:endTime5] template.endTime6 = template_params[:endTime6] template.endTime7 = template_params[:endTime7] template.endTime8 = template_params[:endTime8] template.endTime9 = template_params[:endTime9] template.endTime10 = template_params[:endTime10] template.endTime11 = template_params[:endTime11] template.endTime12 = template_params[:endTime12] template.endTime13 = template_params[:endTime13] template.endTime14 = template_params[:endTime14] template.endTime15 = template_params[:endTime15] template.endTime16 = template_params[:endTime16] template.endTime17 = template_params[:endTime17]
+template.driveTime1 = template_params[:driveTime1] template.driveTime2 = template_params[:driveTime2] template.driveTime3 = template_params[:driveTime3] template.driveTime4 = template_params[:driveTime4] template.driveTime5 = template_params[:driveTime5] template.driveTime6 = template_params[:driveTime6] template.driveTime7 = template_params[:driveTime7] template.driveTime8 = template_params[:driveTime8] template.driveTime9 = template_params[:driveTime9] template.driveTime10 = template_params[:driveTime10] template.driveTime11 = template_params[:driveTime11] template.driveTime12 = template_params[:driveTime12] template.driveTime13 = template_params[:driveTime13] template.driveTime14 = template_params[:driveTime14] template.driveTime15 = template_params[:driveTime15] template.driveTime16 = template_params[:driveTime16] template.driveTime17 = template_params[:driveTime17]
+template.event1 = template_params[:event1] template.event2 = template_params[:event2] template.event3 = template_params[:event3] template.event4 = template_params[:event4] template.event5 = template_params[:event5] template.event6 = template_params[:event6] template.event7 = template_params[:event7] template.event8 = template_params[:event8] template.event9 = template_params[:event9] template.event10 = template_params[:event10] template.event11 = template_params[:event11] template.event12 = template_params[:event12] template.event13 = template_params[:event13] template.event14 = template_params[:event14] template.event15 = template_params[:event15] template.event16 = template_params[:event16] template.event17 = template_params[:event17]
+template.distance1 = template_params[:distance1] template.distance2 = template_params[:distance2] template.distance3 = template_params[:distance3] template.distance4 = template_params[:distance4] template.distance5 = template_params[:distance5] template.distance6 = template_params[:distance6] template.distance7 = template_params[:distance7] template.distance8 = template_params[:distance8] template.distance9 = template_params[:distance9] template.distance10 = template_params[:distance10] template.distance11 = template_params[:distance11] template.distance12 = template_params[:distance12] template.distance13 = template_params[:distance13] template.distance14 = template_params[:distance14] template.distance15 = template_params[:distance15] template.distance16 = template_params[:distance16] template.distance17 = template_params[:distance17]
+  
+      # Save the template to the database
+      template.save
+  
       puts "Created template: #{template_params}"
     else
-      puts "Error creating template: #{template.errors.full_messages.join(', ')}"
+      puts "Template already exists: #{template_params}"
     end
   end
