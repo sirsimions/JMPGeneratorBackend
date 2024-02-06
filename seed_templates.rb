@@ -13,6 +13,7 @@ templates_to_seed.each do |template_params|
       # Create a new Finaltable record if it doesn't exist
       template = Finaltable.new
   
+  
       # Set attributes based on the template_params hash
       template.startPosition = template_params[:startPosition]
       template.startTime = template_params[:startTime]
@@ -28,7 +29,7 @@ template.distance1 = template_params[:distance1] template.distance2 = template_p
   
       # Save the template to the database
       template.save
-  
+
       puts "Created template: #{template_params}"
     else
       puts "Template already exists: #{template_params}"
