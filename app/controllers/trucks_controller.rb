@@ -4,6 +4,20 @@ class TrucksController < ApplicationController
     render json: truck,status: :created
   end
 
+  def index
+    trucks=Truck.all
+    render json: trucks
+  end
+
+  def show
+    truck = Truck.find_by(id: params[:id]);
+    if truck
+        render json: truck, status: :created
+    else
+        render json: { error: "Not authorized" }, status: :unauthorized
+    end
+end
+
   def calculate_allowance_details(truck)
     days_since_departure = (Date.today - truck.departure_date).to_i
     allowance_qualifying_days = truck.allowance_qualifying_days

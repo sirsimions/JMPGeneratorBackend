@@ -34,8 +34,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put '/maintenances/:id/update', to: 'maintenances#update'
 
-  post '/trucks', to: 'trucks#create'
-  
+  post '/truck', to: 'trucks#create'
+  get '/truck/:id', to 'trucks#show'
+  get '/qualified', to 'trucks#index'
   
   # get "/index", to: "users#index"
   
