@@ -35,8 +35,8 @@ Rails.application.routes.draw do
   put '/maintenances/:id/update', to: 'maintenances#update'
 
   post '/truck', to: 'trucks#create'
-  get '/truck/:id', to 'trucks#show'
-  get '/qualified', to 'trucks#index'
+  get '/truck/:id', to: 'trucks#show'
+  get '/qualified', to: 'trucks#index'
   
   # get "/index", to: "users#index"
   
