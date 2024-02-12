@@ -1,4 +1,5 @@
 Rails.application.routes.draw do
+  resources :trucks
   resources :auths
   resources :maintenances
   resources :completed_trucks
@@ -7,6 +8,10 @@ Rails.application.routes.draw do
   resources :newtemplates
   resources :templates
   resources :users
+
+  resources :trucks do
+    patch 'delay_entry', on: :member
+  end
   # For details on the DSL available within this file, see https://guides.rubyonrails.org/routing.html
   # get "/", to: 'users#show'
   delete '/del/:id', to: 'finaltables#destroy'
@@ -29,6 +34,9 @@ Rails.application.routes.draw do
   delete '/logout', to: 'sessions#destroy'
   put '/maintenances/:id/update', to: 'maintenances#update'
 
+  post '/trucks', to: 'trucks#create'
+  
+  
   # get "/index", to: "users#index"
   
   # post "/tempc", to: "finaltable#create"

@@ -1,0 +1,15 @@
+# Read about fixtures at https://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  truckNumber: MyString
+  driverName: MyString
+  departureDate: 2024-02-11
+  allowanceQualifyingDays: 1
+  paidDelayDays: 1
+
+two:
+  truckNumber: MyString
+  driverName: MyString
+  departureDate: 2024-02-11
+  allowanceQualifyingDays: 1
+  paidDelayDays: 1
