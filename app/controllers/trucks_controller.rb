@@ -4,6 +4,8 @@ class TrucksController < ApplicationController
     render json: truck,status: :created
   end
 
+
+
   def index
     qualified_trucks = Truck.all.select { |truck| truck_qualifies_for_allowance?(truck) }
     render json: qualified_trucks
@@ -18,30 +20,31 @@ class TrucksController < ApplicationController
     end
 end
 
-  def calculate_allowance_details(truck)
-    days_since_departure = (Date.today - truck.departure_date).to_i
-    allowance_qualifying_days = truck.allowance_qualifying_days
-  
-    if days_since_departure >= allowance_qualifying_days
-      days_to_be_paid = days_since_departure - allowance_qualifying_days + 1
-      unpaid_days = truck.unpaid_allowance_days
-      paid_days = [truck.paidDelayDays, days_to_be_paid].min
-      excess_days_paid = [0, days_to_be_paid - unpaid_days].max
-      {
-        truckNumber: truck.truck_number,
-        driverName: truck.driver_name,
-        daysSinceDeparture: days_since_departure,
-        daysToBePaid: days_to_be_paid,
-        paidDelayDays: paid_days,
-        unpaidAllowanceDays: unpaid_days,
-        excessDaysPaid: excess_days_paid
-      }
-    else
-      {
-        message: "Driver does not qualify for allowance yet."
-      }
-    end
+def calculate_allowance_details(truck)
+  days_since_departure = (Date.today - truck.departureDate).to_i
+  allowance_qualifying_days = truck.allowanceQualifyingDays
+
+  if days_since_departure >= allowance_qualifying_days
+    days_to_be_paid = days_since_departure - allowance_qualifying_days + 1
+    unpaid_days = [0, days_to_be_paid - truck.paidDelayDays].max
+    paid_days = [0, [truck.paidDelayDays, days_to_be_paid].min].max
+    excess_days_paid = [0, truck.paidDelayDays - days_to_be_paid].max
+
+    {
+      truckNumber: truck.truckNumber,
+      driverName: truck.driverName,
+      daysSinceDeparture: days_since_departure,
+      daysToBePaid: days_to_be_paid,
+      paidDelayDays: paid_days,
+      unpaidAllowanceDays: unpaid_days,
+      excessDaysPaid: excess_days_paid
+    }
+  else
+    {
+      message: "Driver does not qualify for allowance yet."
+    }
   end
+end
   
   def delay_entry
     if @truck.update(truck_params)
