@@ -5,8 +5,8 @@ class TrucksController < ApplicationController
   end
 
   def index
-    trucks=Truck.all
-    render json: trucks
+    qualified_trucks = Truck.all.select { |truck| truck_qualifies_for_allowance?(truck) }
+    render json: qualified_trucks
   end
 
   def show
@@ -52,6 +52,12 @@ end
   end
   
   private
+
+  def truck_qualifies_for_allowance?(truck)
+    days_since_departure = (Date.today - truck.departure_date).to_i
+    allowance_qualifying_days = truck.allowance_qualifying_days
+    days_since_departure >= allowance_qualifying_days
+  end
   
   def truck_params
     params.require(:truck).permit(:paidDelayDays, :truckNumber, :driverName, :departureDate, :allowanceQualifyingDays, :paidDelayDays,)
