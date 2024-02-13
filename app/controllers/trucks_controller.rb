@@ -58,7 +58,7 @@ end
 
   def truck_qualifies_for_allowance?(truck)
     days_since_departure = (Date.today - truck.departureDate).to_i
-    allowance_qualifying_days = truck.allowance_qualifying_days
+    allowance_qualifying_days = truck.allowanceQualifyingDays
     days_since_departure >= allowance_qualifying_days
   end
   
