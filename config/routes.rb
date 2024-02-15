@@ -37,6 +37,8 @@ Rails.application.routes.draw do
   post '/truck', to: 'trucks#create'
   get '/truck/:id', to: 'trucks#show'
   get '/qualified', to: 'trucks#index'
+
+  patch '/delay_entry/:id', to: 'trucks#delay_entry'
   
   # get "/index", to: "users#index"
   
